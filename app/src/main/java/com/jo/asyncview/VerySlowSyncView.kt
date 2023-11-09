@@ -9,6 +9,7 @@ import android.view.View
 
 class VerySlowSyncView(context: Context, attrs :AttributeSet? = null) : View(context ,attrs) {
 
+    private var sum: Long = 0L
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.run {
@@ -20,7 +21,6 @@ class VerySlowSyncView(context: Context, attrs :AttributeSet? = null) : View(con
     }
 
     private fun verySlowOperation() {
-        var sum: Long = 0L
         for(i in 0 until 1000000000) {
             sum += i.toLong()
         }
